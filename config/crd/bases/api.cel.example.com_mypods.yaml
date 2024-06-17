@@ -39,10 +39,16 @@ spec:
           spec:
             description: MypodSpec defines the desired state of Mypod
             properties:
-              foo:
-                description: Foo is an example field of Mypod. Edit mypod_types.go
-                  to remove/update
-                type: string
+              maxReplicas:
+                type: integer
+              minReplicas:
+                type: integer
+              replicas:
+                type: integer
+            required:
+            - maxReplicas
+            - minReplicas
+            - replicas
             type: object
           status:
             description: MypodStatus defines the observed state of Mypod

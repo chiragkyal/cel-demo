@@ -1,0 +1,23 @@
+# permissions for end users to view mypods.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: cel-demo
+    app.kubernetes.io/managed-by: kustomize
+  name: mypod-viewer-role
+rules:
+- apiGroups:
+  - api.cel.example.com
+  resources:
+  - mypods
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - api.cel.example.com
+  resources:
+  - mypods/status
+  verbs:
+  - get

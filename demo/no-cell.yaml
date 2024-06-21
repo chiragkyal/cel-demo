@@ -4,8 +4,8 @@ metadata:
   labels:
     app.kubernetes.io/name: cel-demo
     app.kubernetes.io/managed-by: kustomize
-  name: mypod-odd
+  name: mypod-no-cell
 spec:
   minReplicas: 2
-  replicas: 3
+  replicas: 9
   maxReplicas: 6

@@ -7,5 +7,5 @@ metadata:
   name: mypod-wrong
 spec:
   minReplicas: 2
-  replicas: 10
+  replicas: 9
   maxReplicas: 6

@@ -1,0 +1,11 @@
+apiVersion: api.cel.example.com/v1
+kind: Mypod
+metadata:
+  labels:
+    app.kubernetes.io/name: cel-demo
+    app.kubernetes.io/managed-by: kustomize
+  name: mypod-correct
+spec:
+  minReplicas: 2
+  replicas: 4
+  maxReplicas: 6

@@ -20,14 +20,14 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-
 // MypodSpec defines the desired state of Mypod
+// +kubebuilder:validation:XValidation:rule="self.minReplicas <= self.replicas && self.replicas <= self.maxReplicas",message="replicas should be within range"
 type MypodSpec struct {
-
 	MinReplicas int `json:"minReplicas"`
 
+	// +kubebuilder:validation:XValidation:rule="self % 2 == 0"
 	Replicas int `json:"replicas"`
-	
+
 	MaxReplicas int `json:"maxReplicas"`
 }
 
